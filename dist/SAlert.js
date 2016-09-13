@@ -100,7 +100,7 @@
         function SAlert(props) {
             _classCallCheck(this, SAlert);
 
-            var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SAlert).call(this, props));
+            var _this = _possibleConstructorReturn(this, (SAlert.__proto__ || Object.getPrototypeOf(SAlert)).call(this, props));
 
             _this.state = {
                 dataRight: [],
@@ -201,6 +201,7 @@
 
                 var mapFunc = function mapFunc(alert, index) {
                     var customKey = 'alert-key-' + alert.id + '-' + alert.position;
+                    var customClassName = _sAlertTools2.default.returnFirstDefined(alert.customClassName, _this3.props.customClassName);
                     var id = alert.id;
                     var condition = _sAlertTools2.default.returnFirstDefined(alert.condition, 'info');
                     var message = _sAlertTools2.default.returnFirstDefined(alert.message, _this3.props.message, '');
@@ -218,6 +219,7 @@
                     return _react2.default.createElement(_SAlertContent2.default, {
                         key: customKey,
                         id: id,
+                        customClassName: customClassName,
                         customFields: customFields,
                         condition: condition,
                         message: message,

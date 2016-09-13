@@ -93,7 +93,7 @@
         function SAlertContent(props) {
             _classCallCheck(this, SAlertContent);
 
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(SAlertContent).call(this, props));
+            return _possibleConstructorReturn(this, (SAlertContent.__proto__ || Object.getPrototypeOf(SAlertContent)).call(this, props));
         }
 
         _createClass(SAlertContent, [{
@@ -180,7 +180,7 @@
         }, {
             key: 'render',
             value: function render() {
-                var classNames = 's-alert-box s-alert-' + this.props.condition + ' s-alert-' + this.props.position + ' ' + (this.props.effect ? 's-alert-is-effect s-alert-effect-' + this.props.effect : '') + ' s-alert-show';
+                var classNames = (this.props.customClassName ? this.props.customClassName : '') + ' s-alert-box s-alert-' + this.props.condition + ' s-alert-' + this.props.position + ' ' + (this.props.effect ? 's-alert-is-effect s-alert-effect-' + this.props.effect : '') + ' s-alert-show';
                 var message = this.props.html ? _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: this.props.message } }) : this.props.message;
                 var styles = this.props.boxPosition ? _sAlertTools2.default.styleToObj(this.props.boxPosition) : {};
                 var id = this.props.id;
